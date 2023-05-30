@@ -1,0 +1,28 @@
+'===================================================================================================
+'Function Name		        - IsPresentInArray
+'Arguments			- array, value
+'Returns			- True or False
+'Purpose			- Checks if val is present as one of the values in array arr
+'Description			- This is to ckeck if a value val is present in the array arr
+'===================================================================================================
+Function IsPresentInArray(arr, val)
+      ul= UBound(arr)
+      Set objAL= CreateObject(Scripting.dictionary)
+
+      For i = 0 To ul
+        objAL.Add TRIM(UCASE(arr(i))),Organization
+
+      Next
+
+      Wait 0,500
+      If objAL.Exists (UCASE(TRIM(val))) Then
+        reporter.ReportEvent micDone,Check presence of  & val &  in the array ,Present-  & join(arr,,)
+        IsPresentInArray= True
+        Else
+        reporter.ReportEvent micDone,Check presence of  & val &  in the array , Not Present-  & join(arr,,)
+        IsPresentInArray= False
+      End If
+
+      Set objAL=Nothing
+	
+End Function

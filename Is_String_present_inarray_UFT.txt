@@ -3,7 +3,7 @@
 'Arguments			- array, value
 'Returns			- True or False
 'Purpose			- Checks if val is present as one of the values in array arr
-'Description			- This is to ckeck if a value val is present in the array arr
+'Description			- This is to check if a value val is present in the array arr
 '===================================================================================================
 Function IsPresentInArray(arr, val)
       ul= UBound(arr)
